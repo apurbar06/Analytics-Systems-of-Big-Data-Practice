@@ -7,10 +7,12 @@ mass = [0.45, 0.91, 1.36, 1.81, 2.27 ]
 
 plt.figure(figsize=(6,6))
 plt.axis([0.4,2.5,3,15])
-# sns.scatterplot(x=mass,y=fuel)
 plt.scatter(mass,fuel)
-plt.plot(mass, fuel, '-o')
+sns.regplot(x=mass, y=fuel)
 
 corr_coeff = np.corrcoef(mass,fuel)
-print(corr_coeff)
 plt.show()
+
+print()
+print(corr_coeff)
+print("\nFrom the plot we can say that this is positive and linear co-relation.")
